@@ -3,11 +3,11 @@ Use LoanManagementDB;
 
 CREATE TABLE Customer(
 		CustomerID INT PRIMARY KEY IDENTITY(1,1),
-		Name NVARCHAR(100),
-		Email NVARCHAR(100),
-		Phone_Number NVARCHAR(100),
+		Name NVARCHAR(200),
+		Email NVARCHAR(200),
+		Phone_Number NVARCHAR(200),
 		Address NVARCHAR(200),
-		CreditScore float
+		CreditScore INT
 		)
 
 CREATE TABLE Loan(
@@ -16,7 +16,7 @@ CREATE TABLE Loan(
 		PrincipalAmount float,
 		InterestRate float,
 		LoanTerm float,
-		LoanType NVARCHAR,
-		LoanStatus NVARCHAR,
+		LoanType NVARCHAR(200),
+		LoanStatus NVARCHAR(200),
 		FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID)
 		)
